@@ -1,0 +1,21 @@
+1️⃣. State Management and Data Flow
+🔸In this project, React's state is used to manage the data flow between the components. The App.js component holds the central state (data and filteredData) that drives both the BubbleChart and DataGrid components.
+
+🔸The data represents the full dataset, while filteredData holds the filtered results (either by category or bubble selection).
+🔸The onBubbleClick handler in the BubbleChart updates the filteredData by filtering based on the clicked bubble's ID.
+🔸Similarly, the category filter (dropdown) updates filteredData based on the selected category, and both components are updated accordingly.
+🔸Data flow is unidirectional from the state in App.js down to the child components, ensuring consistency and maintainability.
+
+2️⃣. Responsive Design
+To make the components responsive:
+🔸BubbleChart: I use the 3rd party library ResponsiveCirclePacking component from Nivo automatically adjusts its layout based on the container's size. By wrapping the chart in a div and giving it a percentage-based height or min-height, it becomes responsive across different screen sizes.
+
+🔸And for DataGrid: The table is styled with width: 100% to fill the available space. You can enhance responsiveness by using CSS media queries to adjust font sizes, padding, and other elements based on the screen size.
+
+3️⃣.Optimizing Performance for Large Datasets
+
+🔸Pagination or Virtualization: Instead of rendering all rows at once, you can implement pagination or use libraries like react-virtualized or react-window. These libraries render only the visible rows, reducing the number of DOM elements at a time.
+
+🔸Memoization: Using React.memo() or useMemo() can prevent unnecessary re-renders of the grid. For example, memoizing the table rows helps avoid recalculating them unless the data changes.
+
+🔸Debounced Filtering: If the filtering logic involves searching or selecting categories, applying debouncing can delay the filtering until the user stops interacting, reducing excessive updates.

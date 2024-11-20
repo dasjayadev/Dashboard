@@ -1,0 +1,70 @@
+/* src/styles/DataGrid.css */
+.data-grid-container {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .data-grid-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  
+  .data-grid-header {
+    background-color: #f4f6f8;
+    border-bottom: 2px solid #e1e4e8;
+  }
+  
+  .data-grid-header th {
+    padding: 16px 24px;
+    text-align: left;
+    color: #2c3e50;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .data-grid-header th:hover {
+    background-color: #f0f3f6;
+  }
+  
+  .data-grid-row {
+    transition: background-color 0.2s ease;
+  }
+  
+  .data-grid-row:nth-child(even) {
+    background-color: #f9fafb;
+  }
+  
+  .data-grid-row:hover {
+    background-color: #f0f3f6;
+  }
+  
+  .data-grid-cell {
+    padding: 12px 24px;
+    border-bottom: 1px solid #e1e4e8;
+    color: #2c3e50;
+  }
+  
+  .sort-icon {
+    margin-left: 8px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  }
+  
+  .sort-icon.active {
+    opacity: 1;
+  }
+  
+  .sort-asc::after {
+    content: '▲';
+  }
+  
+  .sort-desc::after {
+    content: '▼';
+  }
